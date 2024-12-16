@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% from "macros/fields.html" import render_select, render_submit %}
+
+{% block content %}
+  <div class="container">
+    <h1>Delete Parent</h1>
+
+    <form action="/delete_parents" method="POST">
+      {{ render_select(name="parent_id", items=parents, selected_value=parent_id, id_field='id', name_field='name') }}
+      {{ render_submit(cls="btn btn-danger") }}
+    </form>
+  </div>
+{% endblock %}
